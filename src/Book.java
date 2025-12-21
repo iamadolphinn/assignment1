@@ -1,78 +1,63 @@
 import java.time.Year;
-
-public class Book {
-
-    // Fields
+public class Book{
     private int id;
     private static int idGen = 1;
-
     private String title;
     private String author;
     private int year;
     private boolean available;
-
-    // --- Default constructor ---
-    public Book() {
-        this.id = idGen++;   // assign and increment
-        this.available = true; // by default book is available
+    public Book(){
+        id = idGen++;
+        available = true;
     }
-
-    // --- Constructor with parameters ---
-    public Book(String title, String author, int year) {
-        this(); // call default constructor
+    public Book(String title, String author, int year){
+        this();
         setTitle(title);
         setAuthor(author);
         setYear(year);
     }
-
-    // --- Getters ---
-    public int getId() { return id; }
-    public String getTitle() { return title; }
-    public String getAuthor() { return author; }
-    public int getYear() { return year; }
-    public boolean isAvailable() { return available; }
-
-    // --- Setters with validation ---
-    public void setTitle(String title) {
-        if (title == null || title.trim().isEmpty())
-            throw new IllegalArgumentException("Title cannot be null or empty.");
+    public int getId(){
+        return id;
+    }
+    public String getTitle(){
+        return title;
+    }
+    public void setTitle(String title){
+        if (title == null){
+            throw new IllegalArgumentException("Invalid title.");
+        }
         this.title = title;
     }
-
-    public void setAuthor(String author) {
-        if (author == null || author.trim().isEmpty())
-            throw new IllegalArgumentException("Author cannot be null or empty.");
-        this.author = author;
+    public String getAuthor(){
+        return author;
     }
-
-    public void setYear(int year) {
+    public void setAuthor(String author){
+        if (author == null ||  author.isEmpty()){
+            throw new IllegalArgumentException("Invalid author.");
+        }
+        this.author = author;
+        }
+    public int getYear(){
+        return year;
+    }
+    public void setYear(int year){
         int currentYear = Year.now().getValue();
-        if (year < 1500 || year > currentYear)
-            throw new IllegalArgumentException("Year must be between 1500 and " + currentYear + ".");
+        if (year < 1500 ||  year > currentYear){
+            throw new IllegalArgumentException("Invalid year.");
+        }
         this.year = year;
     }
-
-    public void setAvailable(boolean available) {
-        this.available = available;
+    public boolean isAvailable(){
+        return available;
     }
-
-    // --- Methods ---
-    public void markAsBorrowed() {
-        this.available = false;
+    public void markAsBorrowed(){
+        available = false;
     }
-
-    public void markAsReturned() {
-        this.available = true;
+    public void markAsReturned(){
+        available = true;
     }
-
-    // --- toString override ---
     @Override
-    public String toString() {
-        return "Book{id=" + id +
-                ", title='" + title + '\'' +
-                ", author='" + author + '\'' +
-                ", year=" + year +
-                ", available=" + available +
-                '}';
+    public String toString(){
+        return "Book[ID=" + id + ", Title=" + title + ", Author=" + author + ", Year=" + year + ", Available=" +  available + "]";
     }
-}
+    }

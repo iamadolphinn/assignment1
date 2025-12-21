@@ -1,45 +1,41 @@
-public class Rectangle {
-
+public class Rectangle{
     private double width;
     private double height;
-    private final int id;
+    private int id;
     private static int idGen = 1;
-
-    // Default constructor
     public Rectangle() {
         this.width = 1.0;
         this.height = 1.0;
         this.id = idGen++;
     }
-
-    // Constructor with parameters
-    public Rectangle(double width, double height) {
-        this();           // assigns unique id
-        setWidth(width);  // validate width
-        setHeight(height);// validate height
+    public Rectangle(double width, double height){
+        this();
+        setWidth(width);
+        setHeight(height);
     }
-
-    // Getters
-    public double getWidth() { return width; }
-    public double getHeight() { return height; }
-
-    // Setters with validation
-    public void setWidth(double width) {
-        if (width <= 0) throw new IllegalArgumentException("Width must be > 0.");
+    public double getWidth(){
+        return width;
+    }
+    public void setWidth(double width){
+        if (width <= 0) {
+            throw new IllegalArgumentException("width must be greater than 0.");
+        }
         this.width = width;
     }
-
-    public void setHeight(double height) {
-        if (height <= 0) throw new IllegalArgumentException("Height must be > 0.");
+    public double getHeight(){
+        return height;
+    }
+    public void setHeight(double height){
+        if (height <= 0){
+            throw new IllegalArgumentException("height must be greater than 0.");
+        }
         this.height = height;
     }
-
-    // Methods
-    public double area() { return width * height; }
-    public double perimeter() { return 2 * (width + height); }
-
+    public double perimeter(){
+        return 2 * (width + height);
+    }
     @Override
-    public String toString() {
-        return "Rectangle{id=" + id + ", width=" + width + ", height=" + height + "}";
+    public String toString(){
+        return "Rectangle{" + "width=" + width + ", height=" + height + ", id=" + id + '}';
     }
 }
