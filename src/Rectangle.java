@@ -34,6 +34,9 @@ public class Rectangle{
     public double perimeter(){
         return 2 * (width + height);
     }
+    public double area(){
+        return width * height;
+    }
     @Override
     public String toString(){
         return "Rectangle{" + "width=" + width + ", height=" + height + ", id=" + id + '}';

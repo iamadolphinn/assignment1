@@ -6,7 +6,7 @@ public class Main {
         System.out.println(r1);
         System.out.println(r2);
 
-        System.out.println("Area of r2:" + r2.area());
         System.out.println("Perimeter of r2:" + r2.perimeter());
+        System.out.println("Area of r1:" + r2.area() + "Area of r2: "  + r2.area());
     }
 }

@@ -7,14 +7,14 @@ public class LibraryApp {
     public void run() {
         boolean running = true;
         while (running) {
-            System.out.print("\nWelcome to Library App!");
-            System.out.print("1. Print all books");
-            System.out.print("2. Add new books");
-            System.out.print("3. Search books by title");
-            System.out.print("4. Borrow a book");
-            System.out.print("5. Return a book");
-            System.out.print("6. Delete a book by id");
-            System.out.print("7. Quit");
+            System.out.println("\nWelcome to Library App!");
+            System.out.println("1. Print all books");
+            System.out.println("2. Add new books");
+            System.out.println("3. Search books by title");
+            System.out.println("4. Borrow a book");
+            System.out.println("5. Return a book");
+            System.out.println("6. Delete a book by id");
+            System.out.println("7. Quit");
             String choice = scanner.nextLine();
             switch (choice) {
                 case "1":
